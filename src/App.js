@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart';
 import Categories from './components/Categories/Categories';
 import Brands from './components/Brands/Brands';
 import Products from './components/Products/Products';
+import UserContextProvider from './Context/UserContext';
 let routes = createBrowserRouter([
   {
     path: '', element: <Layout/>, children: [
@@ -24,9 +25,9 @@ let routes = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={routes}>
-    
-  </RouterProvider>
+  return <UserContextProvider>
+    <RouterProvider router={routes}></RouterProvider>
+  </UserContextProvider>
 }
 
 export default App;
